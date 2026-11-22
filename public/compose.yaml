@@ -1,0 +1,28 @@
+services:
+  study:
+    build:
+      context: ..
+      dockerfile: public/Dockerfile
+    env_file: public.env
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:size=256m,noexec,nosuid
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 80
+    mem_limit: 2g
+    cpus: 2
+    volumes: [study:/data]
+    expose: ["8080"]
+  https:
+    image: caddy:2
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    env_file: public.env
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - certificates:/data
+volumes:
+  study:
+  certificates:

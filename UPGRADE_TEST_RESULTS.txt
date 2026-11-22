@@ -1,0 +1,41 @@
+A.R.G.U.S. master | 22 November 2026 | Windows development host
+
+Combined benchmark including real Chromium: 128 passed, 0 failed, 0 skipped.
+Compiled 22 Python modules; imported 21 without launch side effects.
+Ran 116 tests in 25.218s in verify.py; all passed.
+The Python regression suite is included in the combined benchmark. Counts overlap.
+The standalone verification also ran the JavaScript syntax, audio, rendering and echo tests.
+
+Role selections executed on the development host. SKIP denotes a test for the other role.
+tablet: 101 passed, 0 failed, 2 skipped.
+laptop: 28 passed, 0 failed, 7 skipped.
+
+Real Windows smoke test
+[PASS] Loopback hub rejected incorrect bearer key (11.1 ms)
+[PASS] Authenticated workstation hello and capabilities (11.1 ms)
+[PASS] Windows created whoami.exe and returned its PID 12296 over WebSocket (13.4 ms)
+[PASS] PPTX saved, transferred, reopened and slides checked (320.4 ms)
+[PASS] PDF drafted, explicitly saved, transferred and content checked (500.8 ms)
+[PASS] DOCX drafted, explicitly saved, transferred and content checked (274.3 ms)
+
+Real Chromium and hub, screenshot 1366x864
+[PASS] Real phrase microphone capture, server verification, PIN and protected HUD socket (8613 ms)
+[PASS] Authenticated PDF upload, two indexed topics and study palette (2061 ms)
+[PASS] Study chat changed SQLite coverage and selected the remaining topic in the live chart (755 ms)
+[PASS] Chromium completed the WebGL transition into the interactive progress pie (21348 ms)
+[PASS] Exit to Normal Mode, collapse progress chart and revoke authenticated session (342 ms)
+
+Synthetic microphone and playback reference
+HUD contracts: 7 scenarios passed (5 audio/playback, rich DOM rendering, unsafe HTML/link isolation).
+[PASS] Quiet capture and authentication without a reference (44.7 ms host test time)
+[PASS] Delayed speaker echo and acoustic tail at 16000 Hz (28.1 ms host test time)
+[PASS] Delayed speaker echo and acoustic tail at 44100 Hz (37.0 ms host test time)
+[PASS] Delayed speaker echo and acoustic tail at 48000 Hz (37.0 ms host test time)
+[PASS] Uncorrelated near speech during playback (22.8 ms host test time)
+[PASS] Quiet near speech survives a stronger simultaneous echo (27.2 ms host test time)
+Simulated speech-onset delay: distinct speech 40.0 ms, double-talk 40.0 ms
+
+Provider LLM, STT, TTS, captions and ntfy workflows in the combined benchmark use deterministic fixtures.
+Actual clear-text provider credentials, the physical Lenovo/OnePlus, ASUS display and Android Clock were not used.
+The Windows live process test checked an OS-issued PID and did not observe a visible application window.
+Raw group names, milliseconds and fixtures are in BENCHMARK_RESULTS.json.

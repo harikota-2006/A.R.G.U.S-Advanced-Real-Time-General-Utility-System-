@@ -1,0 +1,10 @@
+.env
+.env.*.bak
+*.db
+*.db-wal
+*.db-shm
+data/
+custom_skills/
+__pycache__/
+.venv/
+static/vendor/

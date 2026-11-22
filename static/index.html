@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+
+  <!-- ═══ PWA Installation meta ═══════════════════════════════════ -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Android Chrome install banner & standalone chrome-less display -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- iOS Safari standalone mode (secondary PWA target) -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="A.R.G.U.S." />
+
+  <!-- Fallback icon references (served as static files) -->
+  <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192.png" />
+  <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
+
+  <title>A.R.G.U.S. — Advanced Real-time General Utility System</title>
+
+  <!-- Three.js r128 -->
+
+
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="/static/hud.css" />
+  <script src="/static/visualizer.js" defer></script>
+  <script src="/static/hud.js" type="module"></script>
+</head>
+<body data-mode="normal">
+  <canvas id="argus-canvas" aria-label="A.R.G.U.S. Möbius particle core"></canvas>
+  <section id="lock-screen" class="lock-screen" aria-label="Authentication">
+    <div class="lock-panel auth-panel"><div class="auth-panel-corner tl"></div><div class="auth-panel-corner tr"></div><div class="auth-panel-corner bl"></div><div class="auth-panel-corner br"></div>
+      <div class="eyebrow">PRIVATE SYSTEM · HARI</div>
+      <h1>A.R.G.U.S.</h1>
+      <p class="subtitle">Advanced Real-Time General Utility System</p>
+      <ol class="gates" aria-label="Authentication stages"><li id="gate-phrase" class="current">01 <span>SPOKEN PHRASE</span></li><li id="gate-pin">02 <span>PIN</span></li></ol>
+      <div id="phrase-stage">
+        <p id="phrase-hint">I solemnly swear that I'm up to no good.</p>
+        <button id="phrase-button" class="primary" disabled>Speak the phrase</button>
+      </div>
+      <form id="pin-stage" hidden>
+        <label>Enter your PIN<input id="pin" type="password" inputmode="numeric" pattern="[0-9]+" autocomplete="off" required></label>
+        <div class="keypad" aria-label="PIN keypad"></div>
+        <button class="primary" type="submit">Verify PIN</button>
+      </form>
+<p id="auth-status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+<main id="hud" hidden>
+  <header id="hud-top">
+    <div class="hud-brand">
+      <span class="brand-acronym">A.R.G.U.S.</span>
+      <span class="brand-full">Advanced Real-time General Utility System</span>
+    </div>
+    <div class="top-actions"><span id="connection" class="connection">OFFLINE</span><time id="clock"></time><div id="mode-badge" class="hud-mode-badge">STANDARD</div><button id="fullscreen" class="quiet" aria-label="Enter full screen">⛶</button><button id="lock" class="quiet">Lock</button></div>
+  </header>
+  <div id="online-toast" class="hidden">System Online</div>
+  <div id="core-state"><div id="state">STANDBY</div><p id="listening-hint">Say “Hey Argus” to begin</p></div>
+  <div id="transcript-ribbon" class="hidden"><span id="transcript-text"><span id="transcript"></span></span></div>
+  <section id="response-bubble" class="hidden" aria-live="polite"><div id="response-text"><div id="response" class="response"></div></div><div id="sources" class="sources"></div></section>
+  <aside id="utility-panel">
+    <button id="study-mode" class="quiet">Study partner</button><button id="detective-mode" class="quiet">Detective mode</button>
+    <label class="upload">Add study material<input id="pdf-upload" type="file" accept="application/pdf,.pdf,.pptx,.docx,.txt,.md"></label>
+    <details><summary>System channels</summary><div id="health" class="health"></div><ol id="activity"></ol></details>
+  </aside>
+  <section id="study-widget" class="context-panel" hidden aria-label="Study progress">
+    <div class="panel-eyebrow">STUDY PARTNER</div><h2 id="study-document">Your study session</h2>
+    <p id="study-progress-text">No study material indexed</p><progress id="study-progress" value="0" max="100"></progress>
+    <div id="study-topics"></div><button id="study-progress-chart" class="quiet">Show progress chart</button><button id="export-study" class="quiet">Export study notes</button>
+  </section>
+  <aside id="detective-panel" class="context-panel" hidden aria-label="Investigation">
+    <div class="panel-eyebrow">INVESTIGATION ACTIVE</div><h2>Evidence desk</h2><p id="case-status">Ask a question to begin a grounded investigation.</p><div id="case-sources"></div>
+  </aside>
+  <article id="visual" class="visual" hidden><div class="visual-heading"><span id="visual-title"></span><button id="close-visual" class="quiet" aria-label="Close visual">×</button></div><div id="visual-content"></div></article>
+  <section id="download-cards" aria-label="Ready files and links"></section>
+  <div id="hud-controls"><button id="mic-toggle" class="mic-toggle" aria-pressed="false">Enable microphone</button><form id="command-form"><label class="sr-only" for="command">Ask Argus</label><input id="command" placeholder="Ask Argus…" autocomplete="off" maxlength="12000"><button type="submit" aria-label="Send command">↗</button></form><button id="stop" class="quiet">Stop</button></div>
+  <p id="notice" class="notice" role="status"></p>
+  <footer id="hud-bottom">
+
+    <div class="telemetry-block" id="tel-workstation">
+      <div class="tel-label">Workstation</div>
+      <div class="tel-value">
+        <span class="status-dot" id="dot-workstation"></span>
+        <span id="val-workstation">Unknown</span>
+      </div>
+      <div class="tel-bar-track">
+        <div class="tel-bar-fill" id="bar-workstation"></div>
+      </div>
+    </div>
+
+    <div class="telemetry-block" id="tel-phone">
+      <div class="tel-label">Phone Node</div>
+      <div class="tel-value">
+        <span class="status-dot" id="dot-phone"></span>
+        <span id="val-phone">Idle</span>
+      </div>
+      <div class="tel-bar-track">
+        <div class="tel-bar-fill" id="bar-phone"></div>
+      </div>
+    </div>
+
+    <div class="telemetry-block telemetry-center" id="tel-timer">
+      <div class="tel-label">Session</div>
+      <div class="tel-value timer-value">
+        <span id="val-timer">--:--</span>
+      </div>
+      <div class="timer-arc-host">
+        <svg id="timer-arc-svg" viewBox="0 0 80 80" aria-hidden="true">
+          <circle class="arc-track" cx="40" cy="40" r="34"
+                  stroke-dasharray="213.6" stroke-dashoffset="0"/>
+          <circle class="arc-fill" id="timer-arc" cx="40" cy="40" r="34"
+                  stroke-dasharray="213.6" stroke-dashoffset="0"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="telemetry-block" id="tel-audio">
+      <div class="tel-label">Audio</div>
+      <div class="tel-value">
+        <span class="status-dot" id="dot-audio"></span>
+        <span id="val-audio">Mic paused</span>
+      </div>
+      <div class="tel-bar-track">
+        <div class="tel-bar-fill audio-fill" id="bar-audio"></div>
+      </div>
+    </div>
+
+    <div class="telemetry-block" id="tel-ws">
+      <div class="tel-label">Core Link</div>
+      <div class="tel-value">
+        <span class="status-dot" id="dot-ws"></span>
+        <span id="val-ws">OFFLINE</span>
+      </div>
+      <div class="tel-bar-track">
+        <div class="tel-bar-fill" id="bar-ws"></div>
+      </div>
+    </div>
+
+  </footer>
+</main>
+</body>
+</html>

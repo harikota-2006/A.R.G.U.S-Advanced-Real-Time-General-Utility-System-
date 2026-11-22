@@ -1,0 +1,995 @@
+{
+  "role": "all",
+  "results": [
+    {
+      "group": "1 Real HTTP auth ordering, phrase replay rejection, signed cookie, daemon key.",
+      "status": "PASS",
+      "elapsed_ms": 446.25,
+      "metrics": {
+        "voice_provider": "mock transcription of bounded PCM",
+        "daemon_missing_key": "rejected"
+      },
+      "detail": ""
+    },
+    {
+      "group": "2 Routing/latency: provider failure falls back and streams first token.",
+      "status": "PASS",
+      "elapsed_ms": 39.66,
+      "metrics": {
+        "mock_first_token_ms": 28.34,
+        "provider_calls": "mocked; no cloud latency claim"
+      },
+      "detail": ""
+    },
+    {
+      "group": "3 ntfy: verify outgoing headers and ingest a received PDF event.",
+      "status": "PASS",
+      "elapsed_ms": 394.17,
+      "metrics": {
+        "transport": "mocked ntfy HTTP; real PDF and SQLite ingestion"
+      },
+      "detail": ""
+    },
+    {
+      "group": "4 Study coverage: real PDF pages, real counters, executed pie renderer.",
+      "status": "PASS",
+      "elapsed_ms": 231.25,
+      "metrics": {
+        "coverage_percent": 50.0,
+        "render": {
+          "mode": "study",
+          "particles": 36000,
+          "rotation": 0,
+          "visualScale": 0.895,
+          "rendering": "real Three.js math; mocked DOM/WebGL/audio"
+        }
+      },
+      "detail": ""
+    },
+    {
+      "group": "5 Detective mode: real turn routing, mocked RPC, executed crimson hook.",
+      "status": "PASS",
+      "elapsed_ms": 218.23,
+      "metrics": {
+        "dashboard_rpc": "mocked OS dispatch",
+        "render": {
+          "mode": "detective",
+          "particles": 36000,
+          "rotation": 0,
+          "visualScale": 0.895,
+          "rendering": "real Three.js math; mocked DOM/WebGL/audio"
+        }
+      },
+      "detail": ""
+    },
+    {
+      "group": "6 Study mode: real turn routing and executed silver theme hook.",
+      "status": "PASS",
+      "elapsed_ms": 218.66,
+      "metrics": {
+        "render": {
+          "mode": "study",
+          "particles": 36000,
+          "rotation": 0,
+          "visualScale": 0.895,
+          "rendering": "real Three.js math; mocked DOM/WebGL/audio"
+        }
+      },
+      "detail": ""
+    },
+    {
+      "group": "7 Real localhost TCP/WebSocket roundtrip; Windows process API mocked.",
+      "status": "PASS",
+      "elapsed_ms": 627.04,
+      "metrics": {
+        "local_roundtrip_ms": 36.66,
+        "network": "real loopback WebSocket",
+        "execution": "mocked Windows CreateProcess"
+      },
+      "detail": ""
+    },
+    {
+      "group": "8 Real PowerPoint ZIP/slides/notes with transfer checksum; no GUI.",
+      "status": "PASS",
+      "elapsed_ms": 389.35,
+      "metrics": {
+        "slides": 3,
+        "artifact_bytes": 38122,
+        "integrity": "real pptx parser, ZIP CRC, SHA-256"
+      },
+      "detail": ""
+    },
+    {
+      "group": "9 Execute restored geometry, color, audio-tap and focus hooks.",
+      "status": "PASS",
+      "elapsed_ms": 214.35,
+      "metrics": {
+        "mode": "study",
+        "particles": 36000,
+        "rotation": 0,
+        "visualScale": 0.895,
+        "rendering": "real Three.js math; mocked DOM/WebGL/audio"
+      },
+      "detail": ""
+    },
+    {
+      "group": "10 Spoken report approval through real rendering, signed download and phone handoff.",
+      "status": "PASS",
+      "elapsed_ms": 505.45,
+      "metrics": {
+        "pdf_pages": 1,
+        "verified_download_bytes": 42424,
+        "external_mocks": "report model, phone transport; confirmation delivered as STT text"
+      },
+      "detail": ""
+    },
+    {
+      "group": "11 WebAudio queue, local interrupt ordering, PCM gating and safe rich text rendering.",
+      "status": "PASS",
+      "elapsed_ms": 403.39,
+      "metrics": {
+        "test_hud.cjs": "HUD contracts: 7 scenarios passed (5 audio/playback, rich DOM rendering, unsafe HTML/link isolation).",
+        "test_pcm_echo.cjs": "[PASS] Quiet capture and authentication without a reference (47.0 ms host test time)\n[PASS] Delayed speaker echo and acoustic tail at 16000 Hz (28.3 ms host test time)\n[PASS] Delayed speaker echo and acoustic tail at 44100 Hz (37.6 ms host test time)\n[PASS] Delayed speaker echo and acoustic tail at 48000 Hz (34.5 ms host test time)\n[PASS] Uncorrelated near speech during playback (24.5 ms host test time)\n[PASS] Quiet near speech survives a stronger simultaneous echo (34.5 ms host test time)\nSimulated speech-onset delay: distinct speech 40.0 ms, double-talk 40.0 ms"
+      },
+      "detail": ""
+    },
+    {
+      "group": "test_audio.GateTests.test_invalid_pcm_rejected",
+      "status": "PASS",
+      "elapsed_ms": 24.84,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_audio.GateTests.test_short_followups_survive_transcript_filter",
+      "status": "PASS",
+      "elapsed_ms": 0.27,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_audio.GateTests.test_silence_and_stationary_noise_do_not_segment",
+      "status": "PASS",
+      "elapsed_ms": 43.38,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_audio.GateTests.test_voiced_signal_segments_after_quiet_and_resets",
+      "status": "PASS",
+      "elapsed_ms": 9.91,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_audio.VoiceTests.test_cancellation_propagates_through_tts",
+      "status": "PASS",
+      "elapsed_ms": 20.26,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_audio.VoiceTests.test_quota_cascades_to_edge_same_clause",
+      "status": "PASS",
+      "elapsed_ms": 13.98,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_audio.VoiceTests.test_streamed_clauses_flush_before_full_answer",
+      "status": "PASS",
+      "elapsed_ms": 10.06,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_audio.VoiceTests.test_streaming_code_fences_never_speak_code",
+      "status": "PASS",
+      "elapsed_ms": 11.08,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_delivery_inbox.DeliveryTests.test_bad_public_url_does_not_leave_orphan_files",
+      "status": "PASS",
+      "elapsed_ms": 49.71,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_delivery_inbox.DeliveryTests.test_export_rejects_tampering_before_writing",
+      "status": "PASS",
+      "elapsed_ms": 37.3,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_delivery_inbox.DeliveryTests.test_export_roundtrip_and_scoped_http_download",
+      "status": "PASS",
+      "elapsed_ms": 130.66,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_delivery_inbox.DeliveryTests.test_local_exports_work_without_public_url",
+      "status": "PASS",
+      "elapsed_ms": 42.91,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_delivery_inbox.InboxTests.test_direct_pdf_link_uses_existing_host_checked_downloader",
+      "status": "PASS",
+      "elapsed_ms": 105.78,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_delivery_inbox.InboxTests.test_failed_pdf_is_retried_three_times_not_silently_dropped",
+      "status": "PASS",
+      "elapsed_ms": 85.85,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_delivery_inbox.InboxTests.test_inbox_bearer_is_scoped_to_exact_origin",
+      "status": "PASS",
+      "elapsed_ms": 64.09,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_delivery_inbox.InboxTests.test_pdf_attachment_ingestion_idempotence_and_study_receipt",
+      "status": "PASS",
+      "elapsed_ms": 166.98,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_delivery_inbox.InboxTests.test_phone_envelope_tamper_and_expiry",
+      "status": "PASS",
+      "elapsed_ms": 36.25,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_delivery_inbox.InboxTests.test_signed_arbitrary_action_and_remote_consent_are_denied",
+      "status": "PASS",
+      "elapsed_ms": 73.0,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_delivery_inbox.InboxTests.test_signed_command_needs_unlocked_session_and_nonce_is_single_use",
+      "status": "PASS",
+      "elapsed_ms": 111.55,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_delivery_inbox.InboxTests.test_unsigned_notes_never_execute",
+      "status": "PASS",
+      "elapsed_ms": 48.85,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_migration.ProfileMigrationTests.test_exclusive_publication_failure_rolls_back_only_new_outputs",
+      "status": "PASS",
+      "elapsed_ms": 72.32,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_migration.ProfileMigrationTests.test_missing_database_does_not_create_empty_profile",
+      "status": "PASS",
+      "elapsed_ms": 21.85,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_migration.ProfileMigrationTests.test_stale_sidecar_and_nested_destination_are_rejected",
+      "status": "PASS",
+      "elapsed_ms": 26.8,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_migration.ProfileMigrationTests.test_wal_snapshot_pin_skills_and_absolute_material_path",
+      "status": "PASS",
+      "elapsed_ms": 86.23,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_platform_boundaries.PlatformBoundaryTests.test_capability_contract_matches_source_a",
+      "status": "PASS",
+      "elapsed_ms": 5.51,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_platform_boundaries.PlatformBoundaryTests.test_hub_normal_entrypoint_isolated_from_workstation",
+      "status": "PASS",
+      "elapsed_ms": 1814.17,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_platform_boundaries.PlatformBoundaryTests.test_hub_sources_exclude_desktop_dependencies",
+      "status": "PASS",
+      "elapsed_ms": 140.43,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_platform_boundaries.PlatformBoundaryTests.test_release_compiles_including_tests",
+      "status": "PASS",
+      "elapsed_ms": 322.58,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_platform_boundaries.PlatformBoundaryTests.test_workstation_entrypoints_isolated_from_hub",
+      "status": "PASS",
+      "elapsed_ms": 648.41,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_public.ChartTests.test_editable_chart_values_and_varied_layout",
+      "status": "PASS",
+      "elapsed_ms": 183.29,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_public.MetricsTests.test_percentiles_bounded_and_invalid",
+      "status": "PASS",
+      "elapsed_ms": 0.14,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_public.PublicTests.test_origin_quota_and_questions",
+      "status": "PASS",
+      "elapsed_ms": 242.19,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_public.PublicTests.test_public_personal_routes_and_assets_are_absent",
+      "status": "PASS",
+      "elapsed_ms": 111.27,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_public.PublicTests.test_real_worker_source_isolation_and_pie",
+      "status": "PASS",
+      "elapsed_ms": 3689.86,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_reports.ReportTests.test_draft_never_publishes_before_confirm_and_never_overwrites",
+      "status": "PASS",
+      "elapsed_ms": 353.47,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_reports.ReportTests.test_editable_presentation_table_and_flow_diagram",
+      "status": "PASS",
+      "elapsed_ms": 130.35,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_reports.ReportTests.test_invalid_document_is_not_published",
+      "status": "PASS",
+      "elapsed_ms": 16.39,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_reports.ReportTests.test_pdf_report_is_readable_and_has_cited_content",
+      "status": "PASS",
+      "elapsed_ms": 92.56,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_reports.ReportTests.test_word_report_has_editable_table_and_diagram",
+      "status": "PASS",
+      "elapsed_ms": 115.97,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_server_auth.AuthTests.test_no_facial_assets_or_obsolete_interactive_dependencies",
+      "status": "PASS",
+      "elapsed_ms": 1.75,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_server_auth.AuthTests.test_origins_rate_limit_and_gate_expiry",
+      "status": "PASS",
+      "elapsed_ms": 0.69,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_server_auth.AuthTests.test_phrase_is_word_exact_and_challenge_is_bound_to_peer_and_used_once",
+      "status": "PASS",
+      "elapsed_ms": 0.45,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_server_auth.AuthTests.test_pin_peer_hash_and_length_are_preserved",
+      "status": "PASS",
+      "elapsed_ms": 51.84,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_server_auth.AuthTests.test_pin_stage_order_wrong_pin_and_replay",
+      "status": "PASS",
+      "elapsed_ms": 0.54,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_server_auth.AuthTests.test_tampered_expired_and_logged_out_tokens_fail",
+      "status": "PASS",
+      "elapsed_ms": 0.82,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_server_auth.CancellationTests.test_broker_cancellation_sends_cancel_frame",
+      "status": "PASS",
+      "elapsed_ms": 73.22,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_server_auth.CancellationTests.test_concurrent_inputs_have_distinct_turns",
+      "status": "PASS",
+      "elapsed_ms": 97.76,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_server_auth.CancellationTests.test_interrupt_cancels_before_backpressured_send",
+      "status": "PASS",
+      "elapsed_ms": 31.56,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_server_auth.CancellationTests.test_interrupt_cancels_llm_and_tts_children",
+      "status": "PASS",
+      "elapsed_ms": 36.34,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_server_auth.CancellationTests.test_websocket_without_session_is_never_accepted",
+      "status": "PASS",
+      "elapsed_ms": 14.46,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_setup_config.SetupConfigTests.test_laptop_setup_keeps_output_location_and_excludes_provider_secrets",
+      "status": "PASS",
+      "elapsed_ms": 14.75,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_setup_config.SetupConfigTests.test_tablet_merge_keeps_pin_hash_profile_and_existing_node_key",
+      "status": "PASS",
+      "elapsed_ms": 40.25,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_skill_policy.SkillPolicyTests.test_approved_statistics_and_json_work",
+      "status": "PASS",
+      "elapsed_ms": 142.37,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_skill_policy.SkillPolicyTests.test_oversized_worker_result_is_rejected",
+      "status": "PASS",
+      "elapsed_ms": 119.01,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_skill_policy.SkillPolicyTests.test_real_module_escape_and_unsafe_imports_rejected",
+      "status": "PASS",
+      "elapsed_ms": 0.54,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_skill_policy.SkillPolicyTests.test_worker_facade_blocks_alias_escape_even_without_ast_validation",
+      "status": "PASS",
+      "elapsed_ms": 147.25,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_storage_skills.SkillPolicyTests.test_ast_rejects_process_private_and_indirect_module_access",
+      "status": "PASS",
+      "elapsed_ms": 0.53,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_storage_skills.SkillWorkerTests.test_module_alias_cannot_escape_worker_facade",
+      "status": "PASS",
+      "elapsed_ms": 187.92,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_storage_skills.SkillWorkerTests.test_register_execute_backup_and_reject_invalid_replacement",
+      "status": "PASS",
+      "elapsed_ms": 252.07,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_storage_skills.StorageTests.test_cache_expiry_and_normalization",
+      "status": "PASS",
+      "elapsed_ms": 39.78,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_storage_skills.StorageTests.test_inbox_deduplicates_and_bounds_persistent_ring",
+      "status": "PASS",
+      "elapsed_ms": 1821.28,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_storage_skills.StorageTests.test_migration_preserves_legacy_tables_and_wal",
+      "status": "PASS",
+      "elapsed_ms": 57.59,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_storage_skills.StorageTests.test_pdf_retrieval_has_pages_and_document_isolation",
+      "status": "PASS",
+      "elapsed_ms": 89.27,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_storage_skills.StorageTests.test_rule_dedup_and_export_roundtrip",
+      "status": "PASS",
+      "elapsed_ms": 109.27,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_study_partner.StudyPartnerTests.test_decline_and_unverified_draft_never_save",
+      "status": "PASS",
+      "elapsed_ms": 126.6,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_study_partner.StudyPartnerTests.test_docx_and_pdf_study_reports_use_explicit_evidence",
+      "status": "PASS",
+      "elapsed_ms": 204.2,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_study_partner.StudyPartnerTests.test_inbox_article_requires_same_source_and_explicit_output",
+      "status": "PASS",
+      "elapsed_ms": 218.74,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_study_partner.StudyPartnerTests.test_incorrect_answer_and_cancelled_delivery_do_not_advance",
+      "status": "PASS",
+      "elapsed_ms": 315.36,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_study_partner.StudyPartnerTests.test_missing_or_unsupported_evidence_never_used_to_teach",
+      "status": "PASS",
+      "elapsed_ms": 266.6,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_study_partner.StudyPartnerTests.test_structured_headings_partition_entire_page",
+      "status": "PASS",
+      "elapsed_ms": 133.76,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_study_partner.StudyPartnerTests.test_study_deck_never_searches_and_missing_permission_gate",
+      "status": "PASS",
+      "elapsed_ms": 410.79,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_study_partner.StudyPartnerTests.test_study_wake_quiet_feedback_topics_and_exact_pie",
+      "status": "PASS",
+      "elapsed_ms": 592.69,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_study_partner.StudyPartnerTests.test_youtube_direct_input_public_fallback_and_failure",
+      "status": "PASS",
+      "elapsed_ms": 71.19,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.SessionTests.test_alarm_next_occurrence",
+      "status": "PASS",
+      "elapsed_ms": 1.67,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.SessionTests.test_chart_cannot_override_event_type_or_invent_numbers",
+      "status": "PASS",
+      "elapsed_ms": 0.14,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.SessionTests.test_confirmation_is_exact_and_expires",
+      "status": "PASS",
+      "elapsed_ms": 0.04,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.SessionTests.test_duration_words_and_fractions",
+      "status": "PASS",
+      "elapsed_ms": 0.68,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.SessionTests.test_followup_does_not_need_wake",
+      "status": "PASS",
+      "elapsed_ms": 0.04,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.SessionTests.test_invalid_clock_minutes_do_not_become_bare_hour",
+      "status": "PASS",
+      "elapsed_ms": 0.05,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.SessionTests.test_later_date_cannot_be_sent_as_earlier_clock_occurrence",
+      "status": "PASS",
+      "elapsed_ms": 0.05,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.SessionTests.test_locked_session_rejects_active_flag",
+      "status": "PASS",
+      "elapsed_ms": 0.01,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.SessionTests.test_planner_cannot_turn_presentation_request_into_script_execution",
+      "status": "PASS",
+      "elapsed_ms": 0.32,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.SessionTests.test_rules_reloaded_for_each_prompt",
+      "status": "PASS",
+      "elapsed_ms": 12.77,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.SessionTests.test_strict_wake",
+      "status": "PASS",
+      "elapsed_ms": 0.03,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.ToolTests.test_action_clarification_keeps_original_request",
+      "status": "PASS",
+      "elapsed_ms": 204.65,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.ToolTests.test_attachment_host_rejected_before_network",
+      "status": "PASS",
+      "elapsed_ms": 11.22,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.ToolTests.test_cache_prevents_all_network_calls",
+      "status": "PASS",
+      "elapsed_ms": 52.84,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.ToolTests.test_clock_cancellation_never_dispatches",
+      "status": "PASS",
+      "elapsed_ms": 50.83,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.ToolTests.test_confirm_push_exactly_once",
+      "status": "PASS",
+      "elapsed_ms": 51.5,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.ToolTests.test_draft_cannot_send_without_confirmation",
+      "status": "PASS",
+      "elapsed_ms": 51.33,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.ToolTests.test_followup_alarm_resolves_locally",
+      "status": "PASS",
+      "elapsed_ms": 88.64,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.ToolTests.test_hud_marker_split_across_tokens_never_reaches_speech",
+      "status": "PASS",
+      "elapsed_ms": 15.08,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.ToolTests.test_no_evidence_never_calls_language_model",
+      "status": "PASS",
+      "elapsed_ms": 51.47,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.ToolTests.test_notice_does_not_block_search_fallback",
+      "status": "PASS",
+      "elapsed_ms": 25.52,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.ToolTests.test_partial_provider_failure_does_not_replay_other_provider",
+      "status": "PASS",
+      "elapsed_ms": 15.21,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.ToolTests.test_pdf_pronoun_followup_reuses_substantive_question",
+      "status": "PASS",
+      "elapsed_ms": 114.85,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.ToolTests.test_script_repair_is_bounded",
+      "status": "PASS",
+      "elapsed_ms": 22.67,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.ToolTests.test_search_all_fail_closed",
+      "status": "PASS",
+      "elapsed_ms": 19.49,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_tools_session.ToolTests.test_tavily_quota_fails_over_once_and_caches",
+      "status": "PASS",
+      "elapsed_ms": 53.62,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_voice_session.VoiceSessionTests.test_mode_exit_closes_wake_free_conversation",
+      "status": "PASS",
+      "elapsed_ms": 165.36,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_voice_session.VoiceSessionTests.test_notice_uses_same_audio_transport",
+      "status": "PASS",
+      "elapsed_ms": 19.34,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_voice_session.VoiceSessionTests.test_spoken_clause_is_emitted_and_recent_echo_filtered",
+      "status": "PASS",
+      "elapsed_ms": 52.83,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.DocumentTests.test_ieee_true_columns_and_preserved_citations",
+      "status": "PASS",
+      "elapsed_ms": 100.44,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.DocumentTests.test_presentation_widescreen_notes_and_collision_safe_save",
+      "status": "PASS",
+      "elapsed_ms": 203.09,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.InputValidationTests.test_artifact_limit_and_hash",
+      "status": "PASS",
+      "elapsed_ms": 13.89,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.InputValidationTests.test_paths_and_reserved_names_rejected",
+      "status": "PASS",
+      "elapsed_ms": 0.26,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.InputValidationTests.test_remote_websocket_requires_tls",
+      "status": "PASS",
+      "elapsed_ms": 0.47,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.LaunchTests.test_cmd_and_bat_aliases_use_windows_association_without_shell_string",
+      "status": "PASS",
+      "elapsed_ms": 13.3,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.LaunchTests.test_code_path_wrapper_can_resolve_without_code_exe",
+      "status": "PASS",
+      "elapsed_ms": 3.51,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.LaunchTests.test_explicit_executable_path_reports_api_ack_not_gui_completion",
+      "status": "PASS",
+      "elapsed_ms": 9.38,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.LaunchTests.test_missing_app_and_os_rejection_do_not_claim_success",
+      "status": "PASS",
+      "elapsed_ms": 1.29,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.LaunchTests.test_registry_app_path_quotes_and_environment_expansion",
+      "status": "PASS",
+      "elapsed_ms": 7.33,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.LaunchTests.test_url_and_document_return_truthful_acceptance",
+      "status": "PASS",
+      "elapsed_ms": 4.15,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.RpcTests.test_document_artifact_transfer_survives_auto_open_failure",
+      "status": "PASS",
+      "elapsed_ms": 253.18,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.RpcTests.test_duplicate_completed_rpc_returns_cached_response",
+      "status": "PASS",
+      "elapsed_ms": 226.22,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.ScriptTests.test_cancel_terminates_script",
+      "status": "PASS",
+      "elapsed_ms": 322.98,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.ScriptTests.test_credentials_not_in_child_environment",
+      "status": "PASS",
+      "elapsed_ms": 120.73,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.ScriptTests.test_parent_exit_also_stops_child_process",
+      "status": "PASS",
+      "elapsed_ms": 140.13,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.ScriptTests.test_script_diagnostics_and_backup",
+      "status": "PASS",
+      "elapsed_ms": 253.04,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.ScriptTests.test_timeout_and_output_bound",
+      "status": "PASS",
+      "elapsed_ms": 1158.74,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "test_workstation.ScriptTests.test_unsupported_actions_rejected",
+      "status": "PASS",
+      "elapsed_ms": 11.47,
+      "metrics": {},
+      "detail": ""
+    },
+    {
+      "group": "Real Chromium login, PDF upload, verified topic progress, WebGL morph, sector interaction and logout",
+      "status": "PASS",
+      "elapsed_ms": 23847.51,
+      "metrics": {},
+      "detail": ""
+    }
+  ],
+  "passed": true,
+  "browser_requested": true,
+  "live_health_requested": false,
+  "scope": "Local files, PDF/Office parsers, SQLite and loopback network. Cloud responses and phone transport use fixtures. --browser exercises Chromium and the real hub."
+}
